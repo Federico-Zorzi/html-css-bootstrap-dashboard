@@ -18,13 +18,13 @@
     />
 
     <!-- FONT AWESOME -->
-    <!-- <link
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
       integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    /> -->
+    />
 
     <!-- GOOGLE FONTS -->
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,16 +39,14 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav
+        class="navbar bg-dark border-bottom border-body navbar-expand-lg"
+        data-bs-theme="dark"
+      >
         <div class="container-fluid">
           <!-- LOGO & BRAND -->
           <a class="navbar-brand" href="#">
-            <img
-              src="/docs/5.3/assets/brand/bootstrap-logo.svg"
-              alt="Bootstrap"
-              width="30"
-              height="24"
-            />
+            <img src="./img/duck.png" alt="Bootstrap" width="60" height="60" />
           </a>
 
           <!-- BTN FOR RESPONSIVE -->
@@ -68,32 +66,21 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Dropdown
+                <a class="nav-link active" aria-current="page" href="#"
+                  >Catalogo Libri
                 </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                </ul>
               </li>
+
               <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                <a class="nav-link" href="#">Anagrafica Utenti</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Storico Prestiti</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Help</a>
               </li>
             </ul>
             <form class="d-flex" role="search">
@@ -111,7 +98,1501 @@
         </div>
       </nav>
     </header>
-    <main></main>
+
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="card-title mb-3">Catalogo Libri</h2>
+            <div class="table-responsive">
+              <table class="table table-striped table-hover align-middle">
+                <thead>
+                  <tr>
+                    <th scope="col">Titolo</th>
+                    <th scope="col">Data Prestito</th>
+                    <th scope="col">Stato</th>
+                    <th scope="col te">Azioni</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- prima riga -->
+                  <tr>
+                    <td>I pilastri della terra</td>
+                    <td>-</td>
+                    <td>
+                      <span class="badge text-bg-success">Disponibile</span>
+                    </td>
+                    <td>
+                      <!-- Edit Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#editModal"
+                      >
+                        <i class="fa-solid fa-pen"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="editModal"
+                        tabindex="-1"
+                        aria-labelledby="editModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="editModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per modificare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-success">
+                                Modifica
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Delete Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
+                      >
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="deleteModal"
+                        tabindex="-1"
+                        aria-labelledby="deleteModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="deleteModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per eliminare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-danger">
+                                Elimina
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- seconda riga -->
+                  <tr>
+                    <td>I promessi sposi</td>
+                    <td>-</td>
+                    <td>
+                      <span class="badge text-bg-success">Disponibile</span>
+                    </td>
+                    <td>
+                      <!-- Edit Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#editModal"
+                      >
+                        <i class="fa-solid fa-pen"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="editModal"
+                        tabindex="-1"
+                        aria-labelledby="editModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="editModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per modificare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-success">
+                                Modifica
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Delete Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
+                      >
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="deleteModal"
+                        tabindex="-1"
+                        aria-labelledby="deleteModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="deleteModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per eliminare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-danger">
+                                Elimina
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- terza riga -->
+                  <tr>
+                    <td>Il signore degli anelli</td>
+                    <td>18/10/2023</td>
+                    <td>
+                      <span class="badge text-light bg-warning"
+                        >In prestito</span
+                      >
+                    </td>
+                    <td>
+                      <!-- Edit Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#editModal"
+                      >
+                        <i class="fa-solid fa-pen"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="editModal"
+                        tabindex="-1"
+                        aria-labelledby="editModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="editModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per modificare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-success">
+                                Modifica
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Delete Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
+                      >
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="deleteModal"
+                        tabindex="-1"
+                        aria-labelledby="deleteModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="deleteModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per eliminare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-danger">
+                                Elimina
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- quarta riga -->
+                  <tr>
+                    <td>Harry Potter e la pietra filosofale</td>
+                    <td>-</td>
+                    <td>
+                      <span class="badge text-bg-success">Disponibile</span>
+                    </td>
+                    <td>
+                      <!-- Edit Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#editModal"
+                      >
+                        <i class="fa-solid fa-pen"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="editModal"
+                        tabindex="-1"
+                        aria-labelledby="editModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="editModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per modificare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-success">
+                                Modifica
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Delete Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
+                      >
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="deleteModal"
+                        tabindex="-1"
+                        aria-labelledby="deleteModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="deleteModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per eliminare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-danger">
+                                Elimina
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- quinta riga -->
+                  <tr>
+                    <td>Il codice Da Vinci</td>
+                    <td>-</td>
+                    <td>
+                      <span class="badge text-bg-danger">Non disponibile</span>
+                    </td>
+                    <td>
+                      <!-- Edit Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#editModal"
+                      >
+                        <i class="fa-solid fa-pen"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="editModal"
+                        tabindex="-1"
+                        aria-labelledby="editModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="editModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per modificare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-success">
+                                Modifica
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Delete Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
+                      >
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="deleteModal"
+                        tabindex="-1"
+                        aria-labelledby="deleteModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="deleteModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per eliminare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-danger">
+                                Elimina
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- sesta riga -->
+                  <tr>
+                    <td>Shining</td>
+                    <td>-</td>
+                    <td>
+                      <span class="badge text-bg-success">Disponibile</span>
+                    </td>
+                    <td>
+                      <!-- Edit Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#editModal"
+                      >
+                        <i class="fa-solid fa-pen"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="editModal"
+                        tabindex="-1"
+                        aria-labelledby="editModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="editModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per modificare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-success">
+                                Modifica
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Delete Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
+                      >
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="deleteModal"
+                        tabindex="-1"
+                        aria-labelledby="deleteModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="deleteModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per eliminare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-danger">
+                                Elimina
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- settima riga -->
+                  <tr>
+                    <td>La divina commedia</td>
+                    <td>21/09/2023</td>
+                    <td>
+                      <span class="badge text-light bg-warning"
+                        >In prestito</span
+                      >
+                    </td>
+                    <td>
+                      <!-- Edit Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#editModal"
+                      >
+                        <i class="fa-solid fa-pen"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="editModal"
+                        tabindex="-1"
+                        aria-labelledby="editModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="editModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per modificare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-success">
+                                Modifica
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Delete Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
+                      >
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="deleteModal"
+                        tabindex="-1"
+                        aria-labelledby="deleteModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="deleteModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per eliminare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-danger">
+                                Elimina
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- ottava riga -->
+                  <tr>
+                    <td>Il trono di spade</td>
+                    <td>-</td>
+                    <td>
+                      <span class="badge text-bg-success">Disponibile</span>
+                    </td>
+                    <td>
+                      <!-- Edit Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#editModal"
+                      >
+                        <i class="fa-solid fa-pen"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="editModal"
+                        tabindex="-1"
+                        aria-labelledby="editModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="editModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per modificare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-success">
+                                Modifica
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Delete Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
+                      >
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="deleteModal"
+                        tabindex="-1"
+                        aria-labelledby="deleteModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="deleteModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per eliminare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-danger">
+                                Elimina
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- nona riga -->
+                  <tr>
+                    <td>Il mondo di Sofia</td>
+                    <td>-</td>
+                    <td>
+                      <span class="badge text-bg-danger">Non disponibile</span>
+                    </td>
+                    <td>
+                      <!-- Edit Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#editModal"
+                      >
+                        <i class="fa-solid fa-pen"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="editModal"
+                        tabindex="-1"
+                        aria-labelledby="editModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="editModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per modificare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-success">
+                                Modifica
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Delete Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
+                      >
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="deleteModal"
+                        tabindex="-1"
+                        aria-labelledby="deleteModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="deleteModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per eliminare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-danger">
+                                Elimina
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- decima riga -->
+                  <tr>
+                    <td>
+                      Le cronache di Narnia: il leone la strega e l'armadio
+                    </td>
+                    <td>25/07/2023</td>
+                    <td>
+                      <span class="badge text-light bg-warning"
+                        >In prestito</span
+                      >
+                    </td>
+                    <td>
+                      <!-- Edit Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#editModal"
+                      >
+                        <i class="fa-solid fa-pen"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="editModal"
+                        tabindex="-1"
+                        aria-labelledby="editModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="editModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per modificare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-success">
+                                Modifica
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Delete Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
+                      >
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="deleteModal"
+                        tabindex="-1"
+                        aria-labelledby="deleteModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="deleteModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per eliminare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-danger">
+                                Elimina
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- undicesima riga -->
+                  <tr>
+                    <td>Il piccolo principe</td>
+                    <td>-</td>
+                    <td>
+                      <span class="badge text-bg-success">Disponibile</span>
+                    </td>
+                    <td>
+                      <!-- Edit Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#editModal"
+                      >
+                        <i class="fa-solid fa-pen"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="editModal"
+                        tabindex="-1"
+                        aria-labelledby="editModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="editModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per modificare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-success">
+                                Modifica
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Delete Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
+                      >
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="deleteModal"
+                        tabindex="-1"
+                        aria-labelledby="deleteModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="deleteModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per eliminare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-danger">
+                                Elimina
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- dodicesima riga -->
+                  <tr>
+                    <td>La storia infinita</td>
+                    <td>-</td>
+                    <td>
+                      <span class="badge text-bg-success">Disponibile</span>
+                    </td>
+                    <td>
+                      <!-- Edit Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#editModal"
+                      >
+                        <i class="fa-solid fa-pen"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="editModal"
+                        tabindex="-1"
+                        aria-labelledby="editModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="editModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per modificare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-success">
+                                Modifica
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Delete Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
+                      >
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="deleteModal"
+                        tabindex="-1"
+                        aria-labelledby="deleteModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title text-danger fs-5"
+                                id="deleteModalLabel"
+                              >
+                                Attenzione
+                              </h1>
+
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              Stai per eliminare il libro selezionato, vuoi
+                              continuare?
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Annulla
+                              </button>
+                              <button type="button" class="btn btn-danger">
+                                Elimina
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
     <footer></footer>
 
     <!-- BOOSTRAP JS -->
