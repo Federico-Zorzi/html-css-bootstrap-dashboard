@@ -30,7 +30,7 @@
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Opencil+Sans:ital,wght@0,300..800;1,300..800&display=swap"
       rel="stylesheet"
     /> -->
 
@@ -45,7 +45,7 @@
       >
         <div class="container-fluid">
           <!-- LOGO & BRAND -->
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="./index.html">
             <img src="./img/duck.png" alt="Bootstrap" width="60" height="60" />
           </a>
 
@@ -66,7 +66,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./index.html"
                   >Catalogo Libri
                 </a>
               </li>
@@ -83,9 +86,9 @@
                 <a class="nav-link" href="#">Help</a>
               </li>
             </ul>
-            <form class="d-flex" role="search">
+            <form class="d-flex" role="search" data-bs-theme="light">
               <input
-                class="form-control text-dark bg-light me-2"
+                class="form-control me-2"
                 type="search"
                 placeholder="Cerca..."
                 aria-label="Search"
@@ -107,55 +110,14 @@
               </div>
 
               <nav>
-                <!-- AddBook Button trigger modal -->
-                <button
-                  type="button"
+                <a
+                  href="./formAddBook.html"
                   class="btn btn-primary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#addBookModal"
-                >
-                  Aggiungi Libro
-                </button>
-
-                <!-- AddBook Modal -->
-                <div
-                  class="modal fade"
-                  id="addBookModal"
                   tabindex="-1"
-                  aria-labelledby="addBookModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="addBookModalLabel">
-                          Aggiungi libro
-                        </h1>
-                        <button
-                          type="button"
-                          class="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
-                      </div>
-                      <div class="modal-body">
-                        Vuoi Aggiungere il libro all'archivio?
-                      </div>
-                      <div class="modal-footer">
-                        <button
-                          type="button"
-                          class="btn btn-outline-danger"
-                          data-bs-dismiss="modal"
-                        >
-                          Annulla
-                        </button>
-                        <button type="button" class="btn btn-outline-success">
-                          Salva
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  role="button"
+                  aria-disabled="true"
+                  >Aggiungi Libro Link
+                </a>
               </nav>
             </div>
 
@@ -189,7 +151,7 @@
                         data-bs-toggle="modal"
                         data-bs-target="#editModal"
                       >
-                        <i class="fa-solid fa-pen"></i>
+                        <i class="fa-solid fa-pencil"></i>
                       </button>
 
                       <!-- Edit Modal -->
@@ -311,7 +273,7 @@
                         data-bs-toggle="modal"
                         data-bs-target="#editModal"
                       >
-                        <i class="fa-solid fa-pen"></i>
+                        <i class="fa-solid fa-pencil"></i>
                       </button>
 
                       <!-- Modal -->
@@ -435,7 +397,7 @@
                         data-bs-toggle="modal"
                         data-bs-target="#editModal"
                       >
-                        <i class="fa-solid fa-pen"></i>
+                        <i class="fa-solid fa-pencil"></i>
                       </button>
 
                       <!-- Modal -->
@@ -557,7 +519,7 @@
                         data-bs-toggle="modal"
                         data-bs-target="#editModal"
                       >
-                        <i class="fa-solid fa-pen"></i>
+                        <i class="fa-solid fa-pencil"></i>
                       </button>
 
                       <!-- Modal -->
@@ -679,7 +641,7 @@
                         data-bs-toggle="modal"
                         data-bs-target="#editModal"
                       >
-                        <i class="fa-solid fa-pen"></i>
+                        <i class="fa-solid fa-pencil"></i>
                       </button>
 
                       <!-- Modal -->
@@ -801,7 +763,7 @@
                         data-bs-toggle="modal"
                         data-bs-target="#editModal"
                       >
-                        <i class="fa-solid fa-pen"></i>
+                        <i class="fa-solid fa-pencil"></i>
                       </button>
 
                       <!-- Modal -->
@@ -925,7 +887,7 @@
                         data-bs-toggle="modal"
                         data-bs-target="#editModal"
                       >
-                        <i class="fa-solid fa-pen"></i>
+                        <i class="fa-solid fa-pencil"></i>
                       </button>
 
                       <!-- Modal -->
@@ -1047,7 +1009,7 @@
                         data-bs-toggle="modal"
                         data-bs-target="#editModal"
                       >
-                        <i class="fa-solid fa-pen"></i>
+                        <i class="fa-solid fa-pencil"></i>
                       </button>
 
                       <!-- Modal -->
@@ -1169,7 +1131,7 @@
                         data-bs-toggle="modal"
                         data-bs-target="#editModal"
                       >
-                        <i class="fa-solid fa-pen"></i>
+                        <i class="fa-solid fa-pencil"></i>
                       </button>
 
                       <!-- Modal -->
@@ -1295,7 +1257,7 @@
                         data-bs-toggle="modal"
                         data-bs-target="#editModal"
                       >
-                        <i class="fa-solid fa-pen"></i>
+                        <i class="fa-solid fa-pencil"></i>
                       </button>
 
                       <!-- Modal -->
@@ -1417,7 +1379,7 @@
                         data-bs-toggle="modal"
                         data-bs-target="#editModal"
                       >
-                        <i class="fa-solid fa-pen"></i>
+                        <i class="fa-solid fa-pencil"></i>
                       </button>
 
                       <!-- Modal -->
@@ -1539,7 +1501,7 @@
                         data-bs-toggle="modal"
                         data-bs-target="#editModal"
                       >
-                        <i class="fa-solid fa-pen"></i>
+                        <i class="fa-solid fa-pencil"></i>
                       </button>
 
                       <!-- Modal -->
