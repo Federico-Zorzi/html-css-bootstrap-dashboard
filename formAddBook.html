@@ -101,7 +101,177 @@
     </header>
 
     <main>
-      <div class="container"></div>
+      <div class="container">
+        <div class="my-3">
+          <h1 class="h2 fw-semibold">Nuovo Libro</h1>
+        </div>
+
+        <div>
+          <form>
+            <div class="mb-3">
+              <div class="row">
+                <!-- NOME AUTORE -->
+                <div class="col">
+                  <label for="authorNameInput" class="form-label">
+                    Nome Autore
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="authorNameInput"
+                    aria-describedby="textAuthorName"
+                    placeholder="Inserisci il nome dell'autore"
+                  />
+                </div>
+                <!-- COGNOME AUTORE -->
+                <div class="col">
+                  <label for="authorSurnameInput" class="form-label">
+                    Cognome Autore
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="authorSurnameInput"
+                    aria-describedby="textAuthorSurname"
+                    placeholder="Inserisci il cognome dell'autore"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- TITOLO LIBRO -->
+            <div class="mb-3">
+              <label for="bookTitleInput" class="form-label"> Titolo </label>
+              <input
+                type="text"
+                class="form-control"
+                id="bookTitleInput"
+                aria-describedby="textBookTitle"
+                placeholder="Inserisci il titolo del libro"
+              />
+              <div id="titleHelpBlock" class="form-text">
+                Titolo versione italiana
+              </div>
+            </div>
+
+            <div class="row">
+              <!-- GENERE -->
+              <div class="col-lg-4 mb-3">
+                <label for="bookTypeInput" class="form-label"> Genere </label>
+                <select
+                  id="bookTypeInput"
+                  class="form-select"
+                  aria-label="Select type of book "
+                >
+                  <option selected>Scegli il genere</option>
+                  <option value="Fantasy">Fantasy</option>
+                  <option value="Thriller">Thriller</option>
+                  <option value="Avventura">Avventura</option>
+                </select>
+              </div>
+
+              <!-- ANNO DI PUBBLICAZIONE -->
+              <div class="col-lg-4 mb-3">
+                <div class="form-group">
+                  <label class="form-label"> Anno di pubblicazione </label>
+                  <input
+                    class="form-control"
+                    type="date"
+                    id="dateStandard"
+                    name="dateStandard"
+                  />
+                </div>
+              </div>
+
+              <!-- ISBN# -->
+              <div class="col-lg-4 mb-3">
+                <label for="codeInput" class="form-label"> ISBN# </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="codeInput"
+                  aria-describedby="textCode"
+                  placeholder="Inserisci il codice ISBN#"
+                />
+              </div>
+            </div>
+
+            <hr />
+
+            <!-- NOTE -->
+            <div class="mb-3">
+              <label for="noteInput" class="form-label"> Note </label>
+              <textarea
+                class="form-control"
+                placeholder="Inserisci eventuali note sul libro"
+                id="noteInput"
+              ></textarea>
+            </div>
+
+            <!-- CHECKBOX LIBRO IN DIGITALE -->
+            <div class="mb-3 form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="digitalBookCheck"
+              />
+              <label class="form-check-label" for="digitalBookCheck">
+                Disponibile anche in digitale
+              </label>
+            </div>
+
+            <!-- PULSANTE PER AGGIUNTA LIBRO -->
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#addBookModal"
+            >
+              Aggiungi Libro
+            </button>
+
+            <!-- AddBook Modal -->
+            <div
+              class="modal fade"
+              id="addBookModal"
+              tabindex="-1"
+              aria-labelledby="addBookModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="addBookModalLabel">
+                      Aggiungi libro
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    Vuoi Aggiungere il libro all'archivio?
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-outline-danger"
+                      data-bs-dismiss="modal"
+                    >
+                      Annulla
+                    </button>
+                    <button type="button" class="btn btn-outline-success">
+                      Salva
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </main>
     <footer></footer>
 
